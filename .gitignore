@@ -1,2 +1,6 @@
+# folders
 .vs/
+x64
+
+#files
 *.vcxproj.user
