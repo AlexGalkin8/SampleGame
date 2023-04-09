@@ -1,9 +1,22 @@
-#include <iostream>
-
+#include "window.h"
 #include <d3d12.h>
+#include <windows.h>
 
-int main(int /*argc*/, char* /*argv[]*/)
+
+
+// Window main
+_Use_decl_annotations_
+int WINAPI wWinMain(HINSTANCE /*hInstance*/, HINSTANCE /*hPrevInstance*/, LPWSTR /*pCmdLine*/, int /*nCmdShow*/)
 {
-	std::cout << "Hello world!" << std::endl;
+	Window window;
+	window.open();
+
+	MSG msg = { };
+	while (GetMessage(&msg, NULL, 0, 0))
+	{
+		TranslateMessage(&msg);
+		DispatchMessage(&msg);
+	}
+
 	return 0;
 }
